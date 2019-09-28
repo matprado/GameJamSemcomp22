@@ -42,7 +42,6 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Tile3" type="Sprite" parent="."]
-editor/display_folded = true
 modulate = Color( 0.0235294, 1, 0.396078, 1 )
 position = Vector2( 191.104, 1.28167 )
 texture = ExtResource( 1 )
