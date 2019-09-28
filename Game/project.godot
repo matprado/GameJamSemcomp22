@@ -20,6 +20,7 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/height=768
 window/size/resizable=false
 
 [rendering]
