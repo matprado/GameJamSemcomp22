@@ -27,10 +27,8 @@ func _physics_process(delta):
     
 	move_and_slide(Vector2(acceleration*direction, alt), Vector2(0, -1))
    
-	var grounded = is_on_floor()
 	alt += 50
 	
-	var double_jump = true;
 	
 	if is_on_floor() and Input.is_action_just_pressed("button_3"):
 		alt = -1000
