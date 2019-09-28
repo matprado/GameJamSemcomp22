@@ -7,7 +7,7 @@
 extents = Vector2( 30.6716, 32.221 )
 
 [node name="ChangingBlock" type="Node2D"]
-position = Vector2( 448, 192 )
+position = Vector2( 416, 224 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
