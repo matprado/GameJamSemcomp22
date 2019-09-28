@@ -20,9 +20,9 @@ func switch_dir():
 func _physics_process(delta):
 	var direction = 0
 	if Input.is_action_pressed("button_1"):
-		direction -= 1
+		direction = -1
 	if Input.is_action_pressed("button_2"):
-		direction += 1
+		direction = 1
     
 	move_and_slide(Vector2(acceleration*direction, alt), Vector2(0, -1))
    
