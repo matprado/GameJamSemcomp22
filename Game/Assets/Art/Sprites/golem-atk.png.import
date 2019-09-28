@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/golem-walk.png-c7705cc7a6df35cdb65bf663b91d8ca9.stex"
+path="res://.import/golem-atk.png-c5bf9e763de0e1313e1f2b68b1e6767f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/golem-walk.png"
-dest_files=[ "res://.import/golem-walk.png-c7705cc7a6df35cdb65bf663b91d8ca9.stex" ]
+source_file="res://Assets/Art/Sprites/golem-atk.png"
+dest_files=[ "res://.import/golem-atk.png-c5bf9e763de0e1313e1f2b68b1e6767f.stex" ]
 
 [params]
 
