@@ -19,6 +19,7 @@ func switch_dir():
 #Function thats controll every physics on body moviment
 func _physics_process(delta):
 	var direction = 0
+
 	if Input.is_action_pressed("button_1"):
 		direction = -1
 	if Input.is_action_pressed("button_2"):
@@ -28,8 +29,12 @@ func _physics_process(delta):
    
 	var grounded = is_on_floor()
 	alt += 50
-
+	
+	var double_jump = true;
+	
 	if is_on_floor() and Input.is_action_just_pressed("button_3"):
+		if(double_jump):
+			alt += 1000
 		alt = -1000
 
 	if is_on_floor() and alt >= 5:
