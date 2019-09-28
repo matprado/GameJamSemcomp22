@@ -68,4 +68,4 @@ tile_data = PoolIntArray( 720896, 2, 0, 720897, 2, 0, 720898, 2, 0, 720899, 2, 0
 position = Vector2( 288, 671 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -128 )
+position = Vector2( 0, -64 )
