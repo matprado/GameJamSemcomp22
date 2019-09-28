@@ -14,7 +14,7 @@
 [ext_resource path="res://Assets/Art/German Shepherd/x3/Shepherd_run_5.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 32, 22.348 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -30,7 +30,7 @@ animations = [ {
 } ]
 
 [node name="Enemy" type="Node2D"]
-position = Vector2( 64, 704 )
+position = Vector2( 63.6028, 709.561 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -40,7 +40,7 @@ __meta__ = {
 position = Vector2( -3.4128, -1.70641 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( -1.138, -5 )
+position = Vector2( -2.72687, 3.34155 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
