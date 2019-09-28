@@ -33,8 +33,6 @@ func _physics_process(delta):
 	var double_jump = true;
 	
 	if is_on_floor() and Input.is_action_just_pressed("button_3"):
-		if(double_jump):
-			alt += 1000
 		alt = -1000
 
 	if is_on_floor() and alt >= 5:
