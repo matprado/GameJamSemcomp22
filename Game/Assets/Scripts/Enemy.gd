@@ -1,21 +1,27 @@
 extends Node2D
 
 const GRAVITY = 10
-const SPEED = 30
+const SPEED = 50
+const RUN_SPEED = 150
 const FLOOR = Vector2(0, -1)
 
-var velocity = Vector2(50, 0)
+var velocity = Vector2(1, 0)
 var direction = 1
-#var collision;
+
+var is_running = false
 
 #signal hit;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$KinematicBody2D/AnimatedSprite.play("walk");
 	pass # Replace with function body.
 
-func _physics_process(delta):	
-	velocity.x = SPEED * direction
+func _physics_process(delta):
+	if(is_running):	
+		velocity.x = RUN_SPEED * direction
+	else:
+		velocity.x = SPEED * direction	
 	velocity.y += GRAVITY	
 	velocity = $KinematicBody2D.move_and_slide(velocity, FLOOR)	
 	pass
@@ -23,8 +29,18 @@ func _physics_process(delta):
 func _on_Timer_timeout():
 	direction *= -1
 	if(direction > 0):
-		$KinematicBody2D/Sprite.set_flip_h(false)
+		$KinematicBody2D/AnimatedSprite.set_flip_h(true)
 	else:
-		$KinematicBody2D/Sprite.set_flip_h(true)
+		$KinematicBody2D/AnimatedSprite.set_flip_h(false)
 	
+	pass # Replace with function body.
+
+
+func _on_WalkRunTimer_timeout():
+	if(is_running):
+		is_running = false
+		$KinematicBody2D/AnimatedSprite.play("walk");
+	else:
+		is_running = true
+		$KinematicBody2D/AnimatedSprite.play("run");	
 	pass # Replace with function body.
