@@ -1,22 +1,24 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Scripts/ChangingBlock.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Steampunk Pack ALL/Steampunk Blocks.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.6716, 32.221 )
+extents = Vector2( 8, 8 )
 
 [node name="ChangingBlock" type="Node2D"]
 position = Vector2( 416, 224 )
+scale = Vector2( 4, 4 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.623529, 0.596078, 0.596078, 1 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 64, 64 )
+region_rect = Rect2( 32, 16, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 editor/display_folded = true
