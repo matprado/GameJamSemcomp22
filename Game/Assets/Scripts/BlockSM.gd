@@ -1,4 +1,8 @@
 extends Node2D
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 
 onready var sprite = get_node("Sprite")
 
@@ -43,7 +47,10 @@ func ChangeState():
 	elif state == Slow:
 		anim = "Slow"
 	sprite.play(anim)
+<<<<<<< HEAD
 
 func getState():
 	return state
 	
+=======
+>>>>>>> origin/master

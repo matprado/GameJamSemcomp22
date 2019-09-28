@@ -8,14 +8,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "damage",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "Intangible",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "damage",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -57,6 +57,7 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
 
+<<<<<<< HEAD
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 0, 10 )
 rotation = 3.14159
@@ -64,3 +65,6 @@ scale = Vector2( 15, 1 )
 enabled = true
 script = ExtResource( 5 )
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_BlockArea_body_entered"]
+=======
+[connection signal="body_entered" from="Area2D" to="." method="_on_BlockSM_body_entered"]
+>>>>>>> origin/master
