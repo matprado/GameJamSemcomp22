@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21, 33 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=5]
 resource_name = "idle"
 length = 0.001
 tracks/0/type = "value"
@@ -22,7 +22,8 @@ tracks/0/keys = {
 "values": [ Rect2( 13, 11.905, 54, 70 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
+resource_name = "jump"
 length = 1.4
 loop = true
 step = 0.2
@@ -35,12 +36,13 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ Rect2( 16, 467, 49.986, 90 ), Rect2( 76, 467, 49.986, 90 ), Rect2( 138, 467, 49.986, 90 ), Rect2( 192, 467, 49.986, 90 ), Rect2( 242, 467, 49.986, 90 ), Rect2( 290, 467, 49.986, 90 ), Rect2( 338, 467, 49.986, 90 ), Rect2( 395, 468, 49.986, 90 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-length = 0.2
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
+length = 0.1
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
@@ -49,10 +51,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 8, 13, 64, 64 ), Rect2( 70, 16, 64, 64 ), Rect2( 8, 13, 64, 64 ) ]
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 8, 13, 64, 64 ), Rect2( 70, 16, 64, 64 ) ]
 }
 
 [node name="Player" type="KinematicBody2D"]
@@ -66,12 +68,12 @@ shape = SubResource( 1 )
 position = Vector2( 30, 738 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 17.7669, 13.4726, 64, 64 )
+region_rect = Rect2( 8, 13, 64, 64 )
 
 [node name="anim" type="AnimationPlayer" parent="Sprite"]
-anims/idle = SubResource( 2 )
-anims/jump = SubResource( 3 )
-anims/walk = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/jump = SubResource( 2 )
+anims/walk = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 320, 574 )
