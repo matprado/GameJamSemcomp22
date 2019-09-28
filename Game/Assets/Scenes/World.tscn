@@ -31,7 +31,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, -64 )
+position = Vector2( 48.4212, -66.1053 )
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 520.342, 672 )
+position = Vector2( 520.682, 677.79 )
