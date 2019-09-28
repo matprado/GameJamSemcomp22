@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Assets/TileSet/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Scenes/ChangingBlock.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Art/Steampunk Pack ALL/steamworld.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Scenes/Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scenes/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scenes/DangerBlock.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
 
@@ -21,18 +21,19 @@ position = Vector2( 288, 671 )
 [node name="Background" type="ParallaxBackground" parent="."]
 editor/display_folded = true
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, -64 )
-
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
 motion_mirroring = Vector2( 3072, 0 )
 
 [node name="Sprite" type="Sprite" parent="Background/ParallaxLayer"]
 position = Vector2( 0.00012207, 0 )
 scale = Vector2( 5.18919, 2.58824 )
-texture = ExtResource( 3 )
 centered = false
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -64 )
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 520.342, 650.78 )
 
+[node name="DangerBlock" parent="." instance=ExtResource( 5 )]
+position = Vector2( 513.522, 496.24 )
