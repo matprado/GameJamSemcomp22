@@ -61,3 +61,10 @@ func _physics_process(delta):
 func _process(delta):
 	
 	pass
+func die():
+	print("vc morreu")
+	return
+
+func slow():
+	print("you are to slow")
+	return
