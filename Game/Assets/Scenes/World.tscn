@@ -77,13 +77,12 @@ position = Vector2( 254.191, 367.419 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 1857.49, 928.693 )
 shape = SubResource( 1 )
-
 [connection signal="trade_blocks" from="Player" to="Blocks" method="_on_Player_trade_blocks"]
 [connection signal="trade_enemies" from="Player" to="Enemies" method="_on_Player_trade_enemies"]
 [connection signal="hit" from="Enemies/Enemy2" to="Player" method="_on_Enemy_hit"]
 [connection signal="hit" from="Enemies/Enemy4" to="Player" method="_on_Enemy_hit"]
 [connection signal="hit" from="Enemies/Enemy13" to="Player" method="_on_Enemy_hit"]
-[connection signal="hit" from="Enemies/Enemy15" to="Enemies" method="_on_Enemy_hit"]
+[connection signal="hit" from="Enemies/Enemy15" to="Player" method="_on_Enemy_hit"]
 [connection signal="hit" from="Enemies/Enemy16" to="Player" method="_on_Enemy_hit"]
 [connection signal="hit" from="Enemies/Enemy17" to="Player" method="_on_Enemy_hit"]
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]

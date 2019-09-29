@@ -40,5 +40,4 @@ margin_right = 664.741
 margin_bottom = 531.704
 custom_fonts/font = SubResource( 2 )
 text = "START"
-
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
