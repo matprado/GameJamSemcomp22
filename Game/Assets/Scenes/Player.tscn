@@ -80,7 +80,7 @@ anims/jump = SubResource( 3 )
 anims/walk = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 317, 454 )
+position = Vector2( 315, 579 )
 current = true
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
