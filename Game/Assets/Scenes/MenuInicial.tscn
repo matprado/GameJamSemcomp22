@@ -62,4 +62,5 @@ text = "CONTROLS:
 	DIRECTIONAL ARROWS"
 align = 1
 valign = 1
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

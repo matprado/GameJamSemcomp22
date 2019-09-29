@@ -147,11 +147,6 @@ func _on_AudioTimer_timeout():
 	pass # Replace with function body.
 
 
-func _on_FinalFlag_win():
-	Global.goto_scene("res://Assets/Scenes/WinScreen.tscn")
-	pass # Replace with function body.
-
-
 func _on_Timer_endTime():
 	die()
 	pass # Replace with function body.

@@ -85,10 +85,11 @@ anims/jump = SubResource( 3 )
 anims/walk = SubResource( 4 )
 
 [node name="warning" type="Label" parent="."]
-margin_left = -169.0
-margin_top = 454.0
-margin_right = 206.0
-margin_bottom = 718.0
+visible = false
+margin_left = -175.347
+margin_top = 400.053
+margin_right = 199.653
+margin_bottom = 664.053
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "TROCOU!"
@@ -118,7 +119,8 @@ drag_margin_v_enabled = false
 smoothing_enabled = true
 
 [node name="Timer" parent="Camera2D" instance=ExtResource( 6 )]
-position = Vector2( -415.757, -95.3666 )
+position = Vector2( -372.917, -0.16613 )
+
 [connection signal="timeout" from="WarningTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="SlowTimer" to="." method="_on_SlowTimer_timeout"]
 [connection signal="timeout" from="AudioTimer" to="." method="_on_AudioTimer_timeout"]
