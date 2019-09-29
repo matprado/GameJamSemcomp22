@@ -23,6 +23,7 @@ signal trade_enemies
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Music.play()
 	slowed = false
 	var verify = true
 	randomize_buttons()

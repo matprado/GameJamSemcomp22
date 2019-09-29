@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Circlerun_Seasons_Forever_Snow_Ball.wav-7e2f1a48a9b43c487bc7c9be7e97471b.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Circlerun_Seasons_Forever_Snow_Ball.wav"
+dest_files=[ "res://.import/Circlerun_Seasons_Forever_Snow_Ball.wav-7e2f1a48a9b43c487bc7c9be7e97471b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0
