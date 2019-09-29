@@ -69,14 +69,18 @@ func _physics_process(delta):
 		if direction == 0:
 			if animation.is_playing() and animation.current_animation == "idle":
 				return
+			$AudioTimer.start()	
 			animation.play("idle")
 		else:
+			$BreathAudio.stop()
 			if animation.is_playing() and animation.current_animation == "walk":
 				return
 			animation.play("walk")
 	else:
+		$BreathAudio.stop()
 		if animation.is_playing() and animation.current_animation == "jump":
 				return
+		$JumpAudio.play()		
 		animation.play("jump")
  
 
@@ -137,3 +141,7 @@ func _on_SlowTimer_timeout():
 	slowed = false
 	pass # Replace with function body.
 
+
+func _on_AudioTimer_timeout():
+	$BreathAudio.play()
+	pass # Replace with function body.
