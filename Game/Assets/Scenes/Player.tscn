@@ -1,14 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/player/player-spritemap-v9-redpants.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/Jellee-Roman.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27, 61 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
-length = 0.001
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:region_rect")
 tracks/0/interp = 1
@@ -16,10 +17,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 9, -1, 31, 52 ) ]
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 9, -1, 31, 52 ), Rect2( 100.042, 3.43464, 33.5023, 45.3902 ), Rect2( 9, -1, 31, 52 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -55,6 +56,10 @@ tracks/0/keys = {
 "values": [ Rect2( 100.461, 150.232, 35.2844, 50.7213 ), Rect2( 147.507, 150.232, 32.3441, 49.9862 ), Rect2( 181.321, 148.761, 47.7809, 53.6617 ), Rect2( 279.088, 152.437, 41.9002, 46.3108 ), Rect2( 331.28, 150.232, 26.4633, 49.9862 ) ]
 }
 
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 3 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -67,7 +72,7 @@ position = Vector2( 21, 712 )
 scale = Vector2( 2.76515, 2.46154 )
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 333.977, 1.29867, 24.4418, 47.4869 )
+region_rect = Rect2( 9, -1, 31, 52 )
 
 [node name="anim" type="AnimationPlayer" parent="Sprite"]
 anims/idle = SubResource( 2 )
@@ -75,8 +80,23 @@ anims/jump = SubResource( 3 )
 anims/walk = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 320, 574 )
+position = Vector2( 317, 454 )
 current = true
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 smoothing_enabled = true
+
+[node name="warning" type="Label" parent="."]
+visible = false
+margin_left = -169.0
+margin_top = 454.0
+margin_right = 206.0
+margin_bottom = 718.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "TROCOU!"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
