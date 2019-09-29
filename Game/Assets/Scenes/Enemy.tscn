@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Scripts/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/golem/tile007.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://Assets/Art/German Shepherd/x3/Shepherd_run_3.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Art/German Shepherd/x3/Shepherd_run_4.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Art/German Shepherd/x3/Shepherd_run_5.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sounds/dog_barking_mono.wav" type="AudioStream" id=20]
+[ext_resource path="res://Assets/Sounds/hungry-ghoul.ogg" type="AudioStream" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 22.348 )
@@ -58,6 +60,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 2 )
 animation = "DogWalk"
+frame = 2
 playing = true
 
 [node name="FlipTimer" type="Timer" parent="."]
@@ -66,6 +69,14 @@ autostart = true
 [node name="WalkRunTimer" type="Timer" parent="."]
 wait_time = 1.43
 autostart = true
+
+[node name="RunAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
+volume_db = -2.0
+
+[node name="GolemAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 21 )
+volume_db = -6.0
 
 [connection signal="timeout" from="FlipTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="WalkRunTimer" to="." method="_on_WalkRunTimer_timeout"]
