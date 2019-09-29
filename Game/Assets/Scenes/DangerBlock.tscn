@@ -64,5 +64,4 @@ script = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
 shape = SubResource( 3 )
-
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_BlockArea2D_body_entered"]

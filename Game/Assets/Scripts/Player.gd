@@ -151,3 +151,8 @@ func _on_AudioTimer_timeout():
 func _on_FinalFlag_win():
 	_on_Enemy_hit()
 	pass # Replace with function body.
+
+
+func _on_Timer_endTime():
+	die()
+	pass # Replace with function body.

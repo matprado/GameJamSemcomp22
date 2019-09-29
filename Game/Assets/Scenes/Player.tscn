@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Art/player/player-spritemap-v9-redpants.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Fonts/Jellee-Roman.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Assets/Sounds/breathing tired.wav" type="AudioStream" id=4]
-[ext_resource path="res://Assets/Sounds/SFX_Jump_08.wav" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Music/Circlerun_Seasons_Forever_Snow_Ball.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Scenes/Timer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Fonts/Jellee-Roman.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Sounds/breathing tired.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sounds/SFX_Jump_08.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Music/Circlerun_Seasons_Forever_Snow_Ball.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27, 61 )
@@ -61,7 +62,7 @@ tracks/0/keys = {
 
 [sub_resource type="DynamicFont" id=5]
 size = 40
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
@@ -91,6 +92,9 @@ drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 smoothing_enabled = true
 
+[node name="Timer" parent="Camera2D" instance=ExtResource( 3 )]
+position = Vector2( -415.757, -95.3666 )
+
 [node name="warning" type="Label" parent="."]
 visible = false
 margin_left = -169.0
@@ -109,18 +113,19 @@ valign = 1
 wait_time = 0.5
 
 [node name="BreathAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 volume_db = -12.0
 
 [node name="AudioTimer" type="Timer" parent="."]
 wait_time = 2.0
 
 [node name="JumpAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = -1.0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
+[connection signal="endTime" from="Camera2D/Timer" to="." method="_on_Timer_endTime"]
 [connection signal="timeout" from="WarningTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="SlowTimer" to="." method="_on_SlowTimer_timeout"]
 [connection signal="timeout" from="AudioTimer" to="." method="_on_AudioTimer_timeout"]
