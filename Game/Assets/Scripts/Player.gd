@@ -109,7 +109,7 @@ func _on_Area2D_body_entered(body):
 
 
 func die():
-	Global.quit_game()
+	Global.reload_scene()
 	pass
 
 func slow():
@@ -123,7 +123,7 @@ func slow():
 
 
 func _on_Enemy_hit():
-	Global.quit_game()
+	Global.reload_scene()
 	pass # Replace with function body.
 
 
