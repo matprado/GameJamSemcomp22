@@ -149,5 +149,5 @@ func _on_AudioTimer_timeout():
 
 
 func _on_FinalFlag_win():
-	_on_Enemy_hit()
+	Global.goto_scene("res://Assets/Scenes/WinScreen.tscn")
 	pass # Replace with function body.

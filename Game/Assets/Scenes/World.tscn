@@ -84,6 +84,7 @@ shape = SubResource( 1 )
 
 [node name="FinalFlag" parent="." instance=ExtResource( 8 )]
 position = Vector2( 4203.58, 556.636 )
+
 [connection signal="trade_blocks" from="Player" to="Blocks" method="_on_Player_trade_blocks"]
 [connection signal="trade_enemies" from="Player" to="Enemies" method="_on_Player_trade_enemies"]
 [connection signal="hit" from="Enemies/Enemy2" to="Player" method="_on_Enemy_hit"]
