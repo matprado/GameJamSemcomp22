@@ -104,12 +104,12 @@ func _on_Timer_timeout():
 	pass # Replace with function body.
 
 func _on_Area2D_body_entered(body):
-	queue_free()
+	die()
 	pass # Replace with function body.
 
 
 func die():
-	#Global.quit_game()
+	Global.quit_game()
 	pass
 
 func slow():
