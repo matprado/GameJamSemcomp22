@@ -24,7 +24,7 @@ tile_data = PoolIntArray( -131090, 1073741828, 0, -131089, 1073741828, 0, -13108
 motion_mirroring = Vector2( 3072, 0 )
 
 [node name="Sprite" type="Sprite" parent="Background/ParallaxLayer"]
-position = Vector2( -1992.23, 138.513 )
+position = Vector2( -2045.08, 126.768 )
 scale = Vector2( 5.18714, 2.30605 )
 texture = ExtResource( 2 )
 centered = false
@@ -33,7 +33,6 @@ centered = false
 position = Vector2( -112.129, -66.1053 )
 
 [node name="Node2D" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Enemy2" parent="Node2D" instance=ExtResource( 4 )]
 position = Vector2( 294.793, 612.986 )
@@ -78,4 +77,5 @@ position = Vector2( 1471.66, 929.172 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
+
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]

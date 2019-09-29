@@ -58,7 +58,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
 frames = SubResource( 2 )
 animation = "DogWalk"
-frame = 5
+frame = 2
 playing = true
 
 [node name="FlipTimer" type="Timer" parent="."]
