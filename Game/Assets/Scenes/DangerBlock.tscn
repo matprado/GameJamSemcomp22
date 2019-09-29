@@ -6,14 +6,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "damage",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "Intangible",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "damage",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -52,4 +52,5 @@ editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_BlockSM_body_entered"]
