@@ -128,8 +128,6 @@ func slow():
 		
 	$SlowTimer.start()
 	pass
-func win():
-	print("you win")
 
 
 func _on_Enemy_hit():
