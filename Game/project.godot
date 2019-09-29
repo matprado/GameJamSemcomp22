@@ -23,10 +23,6 @@ config/icon="res://icon.png"
 
 Global="*res://Assets/Scripts/Global.gd"
 
-[debug]
-
-gdscript/warnings/enable=false
-
 [display]
 
 window/size/height=768
