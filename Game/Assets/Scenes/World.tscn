@@ -75,7 +75,6 @@ position = Vector2( 416, 736 )
 position = Vector2( 352, 736 )
 
 [node name="Area2D" type="Area2D" parent="."]
-editor/display_folded = true
 position = Vector2( 254.191, 367.419 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -84,6 +83,7 @@ shape = SubResource( 1 )
 
 [node name="FinalFlag" parent="." instance=ExtResource( 8 )]
 position = Vector2( 4203.58, 556.636 )
+
 [connection signal="trade_blocks" from="Player" to="Blocks" method="_on_Player_trade_blocks"]
 [connection signal="trade_enemies" from="Player" to="Enemies" method="_on_Player_trade_enemies"]
 [connection signal="hit" from="Enemies/Enemy2" to="Player" method="_on_Enemy_hit"]

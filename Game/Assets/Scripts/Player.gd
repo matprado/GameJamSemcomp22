@@ -73,12 +73,12 @@ func _physics_process(delta):
 			$AudioTimer.start()	
 			animation.play("idle")
 		else:
-			$BreathAudio.stop()
+			#$BreathAudio.stop()
 			if animation.is_playing() and animation.current_animation == "walk":
 				return
 			animation.play("walk")
 	else:
-		$BreathAudio.stop()
+		#$BreathAudio.stop()
 		if animation.is_playing() and animation.current_animation == "jump":
 				return
 		$JumpAudio.play()		
@@ -144,12 +144,12 @@ func _on_SlowTimer_timeout():
 
 
 func _on_AudioTimer_timeout():
-	$BreathAudio.play()
+	#$BreathAudio.play()
 	pass # Replace with function body.
 
 
 func _on_FinalFlag_win():
-	_on_Enemy_hit()
+	Global.goto_scene("res://Assets/Scenes/WinScreen.tscn")
 	pass # Replace with function body.
 
 
