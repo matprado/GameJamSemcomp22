@@ -108,17 +108,17 @@ func _on_Timer_timeout():
 	pass # Replace with function body.
 
 func _on_Area2D_body_entered(body):
-	print_debug("caiu")
-	Global.quit_game()
+	if(body == self):
+		print_debug("caiu")
+		Global.quit_game()
 	pass # Replace with function body.
 
 
 func die():
-	Global.reload_scene()
+	Global.goto_scene("res://Assets/Scenes/MenuInicial.tscn")
 	pass
 
-func slow():
-	print("you are too slow")	
+func slow():	
 	if(!slowed):
 		acceleration /= 2
 		slowed = true
@@ -128,7 +128,7 @@ func slow():
 
 
 func _on_Enemy_hit():
-	Global.reload_scene()
+	Global.goto_scene("res://Assets/Scenes/MenuInicial.tscn")
 	pass # Replace with function body.
 
 

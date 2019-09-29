@@ -4,7 +4,7 @@ const GRAVITY = 10
 const DOG_SPEED = 25
 const DOG_RUN_SPEED = 200
 const GOLEM_SPEED = 30
-const COLLIDE_WALL = Vector2(0, 1)
+const COLLIDE_WALL = Vector2(1, 0)
 
 const DOG_POSITION_X = -1.1138
 const DOG_POSITION_Y = 2.923
