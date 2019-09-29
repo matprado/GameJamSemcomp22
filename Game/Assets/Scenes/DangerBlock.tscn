@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Scripts/BlockSM.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Art/Steampunk Pack ALL/blocks/tile062.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Art/Steampunk Pack ALL/blocks/tile000.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Art/Steampunk Pack ALL/blocks/tile026.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/Steampunk Pack ALL/blocoB.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Steampunk Pack ALL/blocoA.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Steampunk Pack ALL/blocoC.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Scripts/BlockRayCast2D.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Scenes/BlockStaticBody2D.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Scripts/BlockArea2D.gd" type="Script" id=7]
@@ -38,10 +38,10 @@ extents = Vector2( 31.8126, 31.5131 )
 extents = Vector2( 32.5261, 32.4644 )
 
 [node name="DangerBlock" type="Node2D"]
+position = Vector2( 192, 96 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 2, 2 )
 frames = SubResource( 1 )
 animation = "NoDamage"
 
@@ -64,4 +64,5 @@ script = ExtResource( 7 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
 shape = SubResource( 3 )
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_BlockArea2D_body_entered"]

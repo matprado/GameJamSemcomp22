@@ -89,8 +89,6 @@ func change_to_golem():
 	$KinematicBody2D/CollisionShape2D.position.y = GOLEM_POSITION_Y
 	$KinematicBody2D/CollisionShape2D.scale.x = GOLEM_SCALE_X
 	$KinematicBody2D/CollisionShape2D.scale.y = GOLEM_SCALE_Y
-	scale.x = 2
-	scale.y = 2
 	$KinematicBody2D/AnimatedSprite.play("GolemWalk")	
 	pass
 
@@ -99,8 +97,6 @@ func change_to_dog():
 	$KinematicBody2D/CollisionShape2D.position.y = DOG_POSITION_Y
 	$KinematicBody2D/CollisionShape2D.scale.x = DOG_SCALE_X
 	$KinematicBody2D/CollisionShape2D.scale.y = DOG_SCALE_Y
-	scale.x = 1
-	scale.y = 1
 	if(is_running):
 		$KinematicBody2D/AnimatedSprite.play("DogRun")	
 	else:

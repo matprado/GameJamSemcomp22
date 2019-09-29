@@ -18,6 +18,9 @@ var down
 var left
 var right
 
+signal trade_blocks
+signal trade_enemies
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	slowed = false
@@ -40,6 +43,8 @@ func _physics_process(delta):
 		direction = 1
 	
 	if Input.is_action_pressed(down):
+		emit_signal("trade_blocks")
+		emit_signal("trade_enemies")
 		randomize_buttons()
 		showWarning()
 	
@@ -103,7 +108,8 @@ func _on_Timer_timeout():
 	pass # Replace with function body.
 
 func _on_Area2D_body_entered(body):
-	queue_free()
+	print_debug("caiu")
+	Global.quit_game()
 	pass # Replace with function body.
 
 
