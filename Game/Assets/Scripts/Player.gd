@@ -80,6 +80,7 @@ func randomize_buttons():
 	var rn = []
 	var x
 	for i in range(4):
+		randomize()
 		x = randi()%sample.size()
 		rn.append(sample[x])
 		sample.remove(x)
