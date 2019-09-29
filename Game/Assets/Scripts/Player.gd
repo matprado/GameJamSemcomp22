@@ -70,7 +70,6 @@ func _physics_process(delta):
 		if direction == 0:
 			if animation.is_playing() and animation.current_animation == "idle":
 				return
-			$AudioTimer.start()	
 			animation.play("idle")
 		else:
 			#$BreathAudio.stop()

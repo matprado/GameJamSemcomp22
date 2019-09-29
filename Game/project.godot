@@ -15,13 +15,17 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Randventure"
+config/name="New Game Project"
 run/main_scene="res://Assets/Scenes/MenuInicial.tscn"
-config/icon="res://mudanca.png"
+config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://Assets/Scripts/Global.gd"
+
+[debug]
+
+gdscript/warnings/enable=false
 
 [display]
 
