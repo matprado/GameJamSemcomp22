@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Scripts/BlockSM.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -11,19 +11,27 @@ animations = [ {
 "name": "damage",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [  ],
 "loop": true,
-"name": "NoDamage",
+"name": "Intangible",
 "speed": 5.0
 }, {
 "frames": [  ],
 "loop": true,
-"name": "Intangible",
+"name": "Slow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "NoDamage",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 28, 28 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 31.5, 31.5 )
 
 [node name="DangerBlock" type="Node2D"]
 script = ExtResource( 1 )
@@ -38,3 +46,10 @@ editor/display_folded = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
 shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_BlockSM_body_entered"]
