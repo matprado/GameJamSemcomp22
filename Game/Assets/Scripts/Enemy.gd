@@ -4,7 +4,7 @@ const GRAVITY = 10
 const DOG_SPEED = 25
 const DOG_RUN_SPEED = 200
 const GOLEM_SPEED = 30
-const FLOOR = Vector2(1, 0)
+const COLLIDE_WALL = Vector2(0, 1)
 
 const DOG_POSITION_X = -1.1138
 const DOG_POSITION_Y = 2.923
@@ -58,7 +58,7 @@ func _physics_process(delta):
 			pass
 			
 	velocity.y += GRAVITY
-	velocity = $KinematicBody2D.move_and_slide(velocity, FLOOR)
+	velocity = $KinematicBody2D.move_and_slide(velocity)
 	
 	for i in range($KinematicBody2D.get_slide_count()):
 		collided = $KinematicBody2D.get_slide_collision(i).get_collider()
@@ -67,7 +67,6 @@ func _physics_process(delta):
 				if(j == "Player"):
 					emit_signal("hit")
 					
-										
 				
 	pass
 

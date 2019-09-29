@@ -3,19 +3,19 @@
 [ext_resource path="res://Assets/Scripts/BlockSM.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://mudanca.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Scenes/BlockRayCast2D.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Scenes/BlockArea2D.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Scripts/BlockRayCast2D.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Scripts/BlockArea2D.gd" type="Script" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "Slow",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "damage",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "NoDamage",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -23,17 +23,17 @@ animations = [ {
 "name": "Intangible",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [  ],
 "loop": true,
-"name": "NoDamage",
+"name": "Slow",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 28, 28 )
+extents = Vector2( 31.8126, 31.5131 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 31.5, 31.5 )
+extents = Vector2( 32.5261, 32.4644 )
 
 [node name="DangerBlock" type="Node2D"]
 script = ExtResource( 1 )
@@ -49,16 +49,16 @@ scale = Vector2( 1, 0.4 )
 script = ExtResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
 shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
-editor/display_folded = true
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource( 3 )
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_BlockArea2D_body_entered"]

@@ -12,6 +12,7 @@ enum {
 var looking_direction = true
 var alt = 0
 var acceleration = 400
+var slowed
 var up
 var down
 var left
@@ -19,6 +20,7 @@ var right
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	slowed = false
 	var verify = true
 	randomize_buttons()
 	pass # Replace with function body.
@@ -88,7 +90,7 @@ func randomize_buttons():
 
 func showWarning():
 	$warning.visible = true
-	$Timer.start()
+	$WarningTimer.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -106,7 +108,27 @@ func _on_Area2D_body_entered(body):
 
 
 func die():
-	print("you died")
+	#Global.quit_game()
+	pass
 
 func slow():
-	print("you are to slow")
+	
+	if(!slowed):
+		acceleration /= 2
+		slowed = true
+		
+	$SlowTimer.start()
+	
+	pass
+
+
+func _on_Enemy_hit():
+	Global.quit_game()
+	pass # Replace with function body.
+
+
+func _on_SlowTimer_timeout():
+	if(slowed):
+		acceleration *= 2
+	slowed = false
+	pass # Replace with function body.

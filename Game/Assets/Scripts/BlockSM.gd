@@ -13,13 +13,14 @@ var state
 var anim
 
 func _ready():
+	
 	state = NoDamage
 	anim = "NoDamage"
+	ChangeState()
 	pass # Replace with function body.	
 
 func _process(delta):
-
-	ChangeState()
+		
 	match state:
 		damage:
 			pass
@@ -32,7 +33,8 @@ func _process(delta):
 			
 
 func ChangeState():
-	state = randi()%4
+	state = randi() % 4
+	
 	if state == damage:
 		anim =  "damage"
 	elif state == NoDamage :
@@ -41,7 +43,9 @@ func ChangeState():
 		anim = "Intangible"
 	elif state == Slow:
 		anim = "Slow"
+		
 	sprite.play(anim)
+	pass
 
 func getState():
 	return state
