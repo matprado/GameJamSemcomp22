@@ -28,7 +28,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 58.2221, -285.833 )
+position = Vector2( 53.2843, -498.155 )
 
 [node name="Enemies" type="Node2D" parent="."]
 editor/display_folded = true

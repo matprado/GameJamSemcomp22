@@ -14,7 +14,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _on_BlockArea_body_entered(body):
+func _on_BlockArea2D_body_entered(body):
 	if Block.getState() == damage:
 		if body.has_method("die"):
 			body.die()

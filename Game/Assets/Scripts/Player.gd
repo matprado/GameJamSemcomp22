@@ -3,6 +3,12 @@ extends KinematicBody2D
 #variables
 onready var corpus = $Sprite
 onready var animation = $Sprite/anim
+enum {
+	damage,
+ 	NoDamage,
+ 	Intangible,
+ 	Slow
+}
 var looking_direction = true
 var alt = 0
 var acceleration = 400
@@ -95,9 +101,6 @@ func _on_Timer_timeout():
 	pass # Replace with function body.
 
 
-func _on_Area2D_body_entered(body):
-	queue_free()
-	pass # Replace with function body.
 
 func die():
 	print("you died")

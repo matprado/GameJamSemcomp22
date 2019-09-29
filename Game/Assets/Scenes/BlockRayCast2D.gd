@@ -10,6 +10,8 @@ enum {
 onready var Block = get_parent()
 var collide
 
+func _ready():
+	remove_exception_rid (Block)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if is_colliding():
