@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/TileSet/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Art/Steampunk Pack ALL/steamworld.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scenes/Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Scenes/DangerBlock.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Scenes/Area2D.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1344.11, 29.716 )
@@ -71,12 +70,12 @@ position = Vector2( 544.451, 735.082 )
 
 [node name="DangerBlock11" parent="Node2D" instance=ExtResource( 5 )]
 
+[node name="DangerBlock" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( -32.6234, 736.389 )
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1471.66, 929.172 )
-script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
-
-[node name="DangerBlock" parent="Area2D" instance=ExtResource( 5 )]
-position = Vector2( -1504.28, -192.783 )
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_Area2D_body_entered"]
