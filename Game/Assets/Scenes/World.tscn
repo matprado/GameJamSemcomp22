@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/TileSet/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Art/Steampunk Pack ALL/steamworld.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scenes/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scenes/DangerBlock.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
 
@@ -27,7 +28,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -112.129, -66.1053 )
+position = Vector2( 58.2221, -285.833 )
 
 [node name="Enemies" type="Node2D" parent="."]
 editor/display_folded = true
@@ -38,3 +39,5 @@ position = Vector2( 103.603, 677.982 )
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 294.793, 612.986 )
 
+[node name="DangerBlock" parent="." instance=ExtResource( 5 )]
+position = Vector2( 69.128, 582.65 )
