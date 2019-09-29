@@ -1,0 +1,43 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Art/flag/tile000.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Art/flag/tile001.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/flag/tile002.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/flag/tile003.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/flag/tile004.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/flag/tile005.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/flag/tile006.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/flag/tile007.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Art/flag/tile008.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/flag/tile009.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Scenes/WinningArea2D.gd" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 24.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 108, 162 )
+
+[node name="FinalFlag" type="Node2D"]
+show_behind_parent = true
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+show_behind_parent = true
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+show_behind_parent = true
+input_pickable = false
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_WinningArea2D_body_entered"]

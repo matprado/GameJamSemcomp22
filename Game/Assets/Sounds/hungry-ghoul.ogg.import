@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hungry-ghoul.ogg-f50d0b44b0ca979d893d9cdc2e3e21bb.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/hungry-ghoul.ogg"
+dest_files=[ "res://.import/hungry-ghoul.ogg-f50d0b44b0ca979d893d9cdc2e3e21bb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
