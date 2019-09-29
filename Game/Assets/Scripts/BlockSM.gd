@@ -17,7 +17,6 @@ func _ready():
 	anim = "NoDamage"
 	pass # Replace with function body.	
 
-
 func _process(delta):
 
 	ChangeState()
@@ -46,4 +45,3 @@ func ChangeState():
 
 func getState():
 	return state
-	
