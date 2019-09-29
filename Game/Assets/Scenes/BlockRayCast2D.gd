@@ -11,12 +11,17 @@ onready var Block = get_parent()
 var collide
 
 func _ready():
-	remove_exception_rid (Block)
+	
+	add_exception(Block)
+	add_exception_rid(Block.get_child(0))
+	add_exception_rid(Block.get_child(1))
+	add_exception_rid(Block.get_child(2))
+	add_exception_rid(Block.get_child(3))
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	force_raycast_update ()
 	if is_colliding():
 		collide = get_collider()
-		collide = collide.get_parent()
 		colision()
 
 
