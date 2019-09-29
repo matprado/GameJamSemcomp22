@@ -20,6 +20,9 @@ var velocity = Vector2(1, 0)
 var direction = 1
 var collided
 
+var bark
+var golem_sound
+
 signal hit
 
 enum {
@@ -34,7 +37,6 @@ var state
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	randomize()
 	change_state()
 	$FlipTimer.wait_time = rand_range(1.0, 5.0)
@@ -89,16 +91,26 @@ func change_to_golem():
 	$KinematicBody2D/CollisionShape2D.position.y = GOLEM_POSITION_Y
 	$KinematicBody2D/CollisionShape2D.scale.x = GOLEM_SCALE_X
 	$KinematicBody2D/CollisionShape2D.scale.y = GOLEM_SCALE_Y
-	$KinematicBody2D/AnimatedSprite.play("GolemWalk")	
+	$RunAudio.stop()
+	$KinematicBody2D/AnimatedSprite.play("GolemWalk")
+	randomize()
+	golem_sound = randi() % 2
+	if(golem_sound == 0):
+		$GolemAudio.play()	
 	pass
 
 func change_to_dog():
+	$GolemAudio.stop()
 	$KinematicBody2D/CollisionShape2D.position.x = DOG_POSITION_X
 	$KinematicBody2D/CollisionShape2D.position.y = DOG_POSITION_Y
 	$KinematicBody2D/CollisionShape2D.scale.x = DOG_SCALE_X
 	$KinematicBody2D/CollisionShape2D.scale.y = DOG_SCALE_Y
 	if(is_running):
-		$KinematicBody2D/AnimatedSprite.play("DogRun")	
+		$KinematicBody2D/AnimatedSprite.play("DogRun")
+		randomize()
+		bark = randi() % 2
+		if(bark == 0):
+			$RunAudio.play()		
 	else:
 		$KinematicBody2D/AnimatedSprite.play("DogWalk")
 	pass
@@ -115,10 +127,16 @@ func _on_Timer_timeout():
 
 func _on_WalkRunTimer_timeout():
 	if(state == DOG):
+		$GolemAudio.stop()
 		if(is_running):
 			is_running = false
-			$KinematicBody2D/AnimatedSprite.play("DogWalk");
+			$KinematicBody2D/AnimatedSprite.play("DogWalk")
+			$RunAudio.stop()
 		else:
 			is_running = true
 			$KinematicBody2D/AnimatedSprite.play("DogRun");	
+			randomize()
+			bark = randi() % 2
+			if(bark == 0):
+				$RunAudio.play()	
 	pass # Replace with function body.
