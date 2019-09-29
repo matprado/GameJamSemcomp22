@@ -80,7 +80,6 @@ func randomize_buttons():
 	var rn = []
 	var x
 	for i in range(4):
-		randomize()
 		x = randi()%sample.size()
 		rn.append(sample[x])
 		sample.remove(x)
@@ -104,16 +103,17 @@ func _on_Timer_timeout():
 	pass # Replace with function body.
 
 func _on_Area2D_body_entered(body):
-	die()
+	queue_free()
 	pass # Replace with function body.
 
 
 func die():
-	Global.quit_game()
+	#Global.quit_game()
+	print("you died")
 	pass
 
 func slow():
-	
+	print("you are too slow")	
 	if(!slowed):
 		acceleration /= 2
 		slowed = true
