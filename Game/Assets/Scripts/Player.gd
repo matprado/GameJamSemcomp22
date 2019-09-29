@@ -147,3 +147,8 @@ func _on_SlowTimer_timeout():
 func _on_AudioTimer_timeout():
 	$BreathAudio.play()
 	pass # Replace with function body.
+
+
+func _on_FinalFlag_win():
+	_on_Enemy_hit()
+	pass # Replace with function body.
